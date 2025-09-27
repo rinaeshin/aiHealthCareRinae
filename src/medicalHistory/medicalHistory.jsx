@@ -17,7 +17,8 @@ function MedicalRecords() {
                 진료 기록
             </div>
             <div className="medical-records-user-label">
-                {name ? `${name} 님의 진료 내역 입니다.` : ""}
+                <span className="medical-records-user-name">{name}</span>
+                님의 진료 내역 입니다.
             </div>
             <div className="medical-records-list-container">
                 {records.length === 0 ? (

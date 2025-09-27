@@ -97,7 +97,7 @@ body,
     transform: translateX(-50%);
     width: 85%;
     max-width: 320px;
-    background: #4b6cff;
+    background: linear-gradient(135deg, #0D213C 0%, #E96C11 100%);
     color: #fff;
     border: none;
     padding: 16px 0;
@@ -107,25 +107,34 @@ body,
     z-index: 100;
     border-radius: 16px;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
-    transition: background 0.2s;
+    transition: filter 0.2s;
 }
 
 .fixed-bottom-btn:active {
-    background: #3751c9;
+    filter: brightness(0.95);
 }
 
 /* filepath: [medicalHistory.css](http://_vscodecontentref_/1) */
 .medical-records-user-label {
     margin-top: 64px;
     margin-bottom: 4px;
-    /* 여백을 줄임 */
     font-size: 1.05rem;
-    color: #333;
-    text-align: left;
-    /* 왼쪽 정렬 */
+    color: #222;
     font-weight: 500;
     width: 90%;
     max-width: 358px;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.medical-records-user-name {
+    color: transparent;
+    background: linear-gradient(135deg, #0D213C 0%, #E96C11 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 700;
 }

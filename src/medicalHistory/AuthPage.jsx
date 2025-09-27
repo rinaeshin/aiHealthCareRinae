@@ -15,7 +15,7 @@ function AuthPage() {
             <div className="auth-topbar">간편 인증</div>
             <div className="auth-content">
                 <div className="auth-title">
-                    간편 인증으로 본인 확인을 완료하세요
+                    간편 인증으로 건강보험 확인을 완료하세요
                 </div>
                 <div className="auth-desc">
                     안전하고 편리한 서비스 이용을 위해 필수적인 과정입니다.
