@@ -1,0 +1,115 @@
+body,
+#root {
+    max-width: 390px;
+    margin: 0 auto !important;
+    background: #fafbff;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.medical-records-root {
+    min-height: 100vh;
+    padding-bottom: 80px;
+    background: #fafbff;
+    max-width: 390px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.medical-records-title {
+    margin: 16px 0 8px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.medical-records-topbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 390px;
+    height: 56px;
+    background: #fff;
+    border-bottom: 1.5px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 101;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.medical-records-list-container {
+    max-width: 358px;
+    width: 100%;
+    margin: 72px auto 0 auto;
+    /* 상단바 높이+여유만큼 아래로 */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.medical-record-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #f7f8fa;
+    font-size: 0.98rem;
+}
+
+.medical-record-date {
+    font-weight: bold;
+    color: #3b4a6b;
+    font-size: 1rem;
+}
+
+.medical-record-diagnosis {
+    margin: 4px 0;
+}
+
+.medical-record-detail {
+    color: #666;
+    font-size: 0.93rem;
+    margin-top: 4px;
+}
+
+.medical-records-divider {
+    border: none;
+    border-top: 1.5px solid #e0e0e0;
+    margin: 0 auto 16px auto;
+    width: 90%;
+}
+
+.fixed-bottom-btn {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 320px;
+    background: #4b6cff;
+    color: #fff;
+    border: none;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 16px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s;
+}
+
+.fixed-bottom-btn:active {
+    background: #3751c9;
+}
