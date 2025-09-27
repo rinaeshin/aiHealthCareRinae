@@ -45,7 +45,7 @@ body,
 .medical-records-list-container {
     max-width: 358px;
     width: 100%;
-    margin: 72px auto 0 auto;
+    margin: auto auto 0 auto;
     /* 상단바 높이+여유만큼 아래로 */
     background: #fff;
     border-radius: 8px;
@@ -112,4 +112,20 @@ body,
 
 .fixed-bottom-btn:active {
     background: #3751c9;
+}
+
+/* filepath: [medicalHistory.css](http://_vscodecontentref_/1) */
+.medical-records-user-label {
+    margin-top: 64px;
+    margin-bottom: 4px;
+    /* 여백을 줄임 */
+    font-size: 1.05rem;
+    color: #333;
+    text-align: left;
+    /* 왼쪽 정렬 */
+    font-weight: 500;
+    width: 90%;
+    max-width: 358px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "./medicalHistory.css";
 import dummyMedicalRecords from "./ex_data";
 
 function MedicalRecords() {
-    const [records, setRecords] = useState([]);
-    const navigate = useNavigate();
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const name = params.get("name") || "";
 
-    useEffect(() => {
-        setTimeout(() => {
-            setRecords(dummyMedicalRecords);
-        }, 300);
-    }, []);
+    // 이름이 일치하는 데이터만 필터링
+    const records = dummyMedicalRecords.filter(rec => rec.name === name);
 
     return (
         <div className="medical-records-root">
-            {/* 상단 고정 바 */}
             <div className="medical-records-topbar">
                 진료 기록
+            </div>
+            <div className="medical-records-user-label">
+                {name ? `${name} 님의 진료 내역 입니다.` : ""}
             </div>
             <div className="medical-records-list-container">
                 {records.length === 0 ? (
@@ -35,7 +35,7 @@ function MedicalRecords() {
             </div>
             <button
                 className="fixed-bottom-btn"
-                onClick={() => navigate("/recommend")}
+                onClick={() => window.location.href = "/recommend"}
             >
                 추천 상품 보기
             </button>
