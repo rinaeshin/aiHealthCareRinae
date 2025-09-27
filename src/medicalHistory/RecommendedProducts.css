@@ -72,52 +72,94 @@
     align-items: center;
 }
 
-.recommended-products-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 56px 0 16px 0;
-    text-align: center;
-}
-
-.recommended-products-desc {
-    font-size: 1rem;
-    color: #444;
-    text-align: center;
-}
-
-.recommended-product-item {
-    width: 90%;
+.recommend-card {
+    width: 95%;
     background: #fff;
-    border-radius: 8px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    padding: 16px 14px;
-    margin-bottom: 16px;
+    padding: 22px 20px 18px 20px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.recommended-product-name {
-    font-size: 1.08rem;
+.recommend-card-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.recommend-card-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #e0e0e0;
+    margin-right: 14px;
+    background: #f2f4fa;
+}
+
+.recommend-card-title {
+    font-size: 1.18rem;
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-right: auto;
     color: #222;
 }
 
-.recommended-product-desc {
-    font-size: 0.97rem;
-    color: #555;
-    margin-bottom: 8px;
+.recommend-card-price {
+    background: linear-gradient(135deg, #0d213c 0%, #e96c11 100%);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 7px 18px;
+    margin-left: 10px;
 }
 
-.recommended-product-price {
-    font-size: 1rem;
-    font-weight: bold;
+.recommend-card-desc {
+    font-size: 0.97rem;
+    color: #666;
+    margin-bottom: 12px;
     margin-top: 2px;
-    color: transparent;
+}
+
+.recommend-card-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+.recommend-card-benefits li {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.benefit-check {
+    color: #3ec46d;
+    font-size: 1.1em;
+    margin-right: 6px;
+}
+
+.recommend-card-btn {
+    width: 100%;
+    padding: 12px 0;
     background: linear-gradient(135deg, #0d213c 0%, #e96c11 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: filter 0.2s;
+}
+
+.recommend-card-btn:active {
+    filter: brightness(0.95);
 }

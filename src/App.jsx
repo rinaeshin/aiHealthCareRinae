@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './Login';
 import MedicalRecords from './medicalHistory/medicalHistory';
 import RecommendedProducts from './medicalHistory/RecommendedProducts';
 import LoadMedicalRecords from './medicalHistory/LoadMedicalRecords';
@@ -12,7 +13,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoadMedicalRecords />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/load" element={<LoadMedicalRecords />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/loading" element={<LoadingPage />} />
           <Route path="/records" element={<MedicalRecords />} />

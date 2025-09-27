@@ -14,7 +14,7 @@ function LoadMedicalRecords() {
             <div className="load-medical-message">
                 지금까지 내가 진단 받은
                 <br />
-                내역을 불러와 보아요!
+                내역을 불러와 보세요!
             </div>
             <button className="load-btn" onClick={handleLoad}>
                 불러오기

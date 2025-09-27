@@ -7,7 +7,7 @@ function AuthPage() {
 
     const handleAuth = () => {
         // '신경준' 이름을 쿼리스트링으로 전달
-        navigate("/loading?name=신경준");
+        navigate("/loading?name=홍길동");
     };
 
     return (

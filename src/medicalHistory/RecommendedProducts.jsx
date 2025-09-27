@@ -34,10 +34,25 @@ function RecommendedProducts() {
                     <div>추천 상품이 없습니다.</div>
                 ) : (
                     products.map((item) => (
-                        <div key={item.id} className="recommended-product-item">
-                            <div className="recommended-product-name">{item.name}</div>
-                            <div className="recommended-product-desc">{item.desc}</div>
-                            <div className="recommended-product-price">{item.price}</div>
+                        <div key={item.id} className="recommend-card">
+                            <div className="recommend-card-header">
+                                <img
+                                    src={item.logo || "/insurance-logo.svg"}
+                                    alt="보험사 로고"
+                                    className="recommend-card-logo"
+                                />
+                                <span className="recommend-card-title">{item.name}</span>
+                                <span className="recommend-card-price">{item.price}</span>
+                            </div>
+                            <div className="recommend-card-desc">{item.desc}</div>
+                            <ul className="recommend-card-benefits">
+                                {item.benefits && item.benefits.map((b, idx) => (
+                                    <li key={idx}>
+                                        <span className="benefit-check">✔</span> {b}
+                                    </li>
+                                ))}
+                            </ul>
+                            <button className="recommend-card-btn">자세히 보기</button>
                         </div>
                     ))
                 )}
