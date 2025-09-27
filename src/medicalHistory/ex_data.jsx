@@ -1,55 +1,33 @@
-// 임의의 진료 내역 데이터
-const dummyMedicalRecords = [
-    {
-        id: 1,
-        date: "2023년 10월 26일",
-        diagnosis: "급성 위염",
-        prescription: "위산 억제제(Omeprazole) 1일 1회, 위점막 보호제(Rebamipide) 1일 3회",
-        detail: "약물 치료 및 식단 관리 교육. 증상 완화와 확인 후 내원. 필요할 경우 추가 치료 예정."
-    },
-    {
-        id: 2,
-        date: "2023년 10월 26일",
-        diagnosis: "급성 위염",
-        prescription: "위산 억제제(Omeprazole) 1일 1회, 위점막 보호제(Rebamipide) 1일 3회",
-        detail: "약물 치료 및 식단 관리 교육. 증상 완화와 확인 후 내원. 필요할 경우 추가 치료 예정."
-    },
-    {
-        id: 3,
-        date: "2023년 10월 26일",
-        diagnosis: "급성 위염",
-        prescription: "위산 억제제(Omeprazole) 1일 1회, 위점막 보호제(Rebamipide) 1일 3회",
-        detail: "약물 치료 및 식단 관리 교육. 증상 완화와 확인 후 내원. 필요할 경우 추가 치료 예정."
-    },
-    {
-        id: 4,
-        date: "2023년 10월 26일",
-        diagnosis: "급성 위염",
-        prescription: "위산 억제제(Omeprazole) 1일 1회, 위점막 보호제(Rebamipide) 1일 3회",
-        detail: "약물 치료 및 식단 관리 교육. 증상 완화와 확인 후 내원. 필요할 경우 추가 치료 예정."
-    },
-    {
-        id: 5,
-        date: "2023년 10월 26일",
-        diagnosis: "급성 위염",
-        prescription: "위산 억제제(Omeprazole) 1일 1회, 위점막 보호제(Rebamipide) 1일 3회",
-        detail: "약물 치료 및 식단 관리 교육. 증상 완화와 확인 후 내원. 필요할 경우 추가 치료 예정."
-    },
-    {
-        id: 6,
-        date: "2023년 10월 26일",
-        diagnosis: "급성 위염",
-        prescription: "위산 억제제(Omeprazole) 1일 1회, 위점막 보호제(Rebamipide) 1일 3회",
-        detail: "약물 치료 및 식단 관리 교육. 증상 완화와 확인 후 내원. 필요할 경우 추가 치료 예정."
-    },
-];
+// public 폴더의 의료_더미_데이터.json 파일에서 진료 내역 데이터를 가져오는 함수
+const getMedicalRecords = async () => {
+    try {
+        // public 폴더의 JSON 파일을 fetch
+        const response = await fetch('/diseaseDump.json');
+        if (!response.ok) {
+            throw new Error('데이터를 가져오는데 실패했습니다.');
+        }
+        const data = await response.json();
+        
+        // 데이터를 medicalHistory 컴포넌트에서 사용할 수 있는 형태로 변환
+        return data.map((record, index) => ({
+            id: index + 1,
+            date: formatDate(record.resTreatStartDate),
+            diagnosis: record.resDiseaseName,
+            prescription: `${record.resDrugName} ${record.resTotalDosingdays}일`,
+            detail: `${record.resHospitalName} ${record.resDepartment}에서 ${record.resTreatType} 치료. 총 진료비: ${record.resTotalAmount.toLocaleString()}원 (본인부담: ${record.resDeductibleAmt.toLocaleString()}원)`
+        }));
+    } catch (error) {
+        console.error('JSON 파싱 오류:', error);
+        return [];
+    }
+};
 
-// useEffect(() => {
-//     // 실제 API 엔드포인트로 교체하세요
-//     fetch("/api/medical-records")
-//         .then((res) => res.json())
-//         .then((data) => setRecords(data))
-//         .catch((err) => console.error(err));
-// }, []);
+// 날짜 포맷팅 함수
+const formatDate = (dateNumber) => {
+    const year = Math.floor(dateNumber / 10000);
+    const month = Math.floor((dateNumber % 10000) / 100);
+    const day = dateNumber % 100;
+    return `${year}년 ${month}월 ${day}일`;
+};
 
-export default dummyMedicalRecords;
+export default getMedicalRecords;

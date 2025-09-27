@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: 'aaa@gmail.com',
-    password: '1234'
+    password: '123456'
   });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -57,8 +59,9 @@ const Login = () => {
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       // 성공 시 처리
-      alert('로그인 성공!');
       console.log('로그인 데이터:', formData);
+      // 진료 기록 페이지로 이동
+      navigate('/medical');
       
     } catch (error) {
       alert('로그인에 실패했습니다. 다시 시도해주세요.');

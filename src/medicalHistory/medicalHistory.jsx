@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./medicalHistory.css";
-import dummyMedicalRecords from "./ex_data";
+import getMedicalRecords from "./ex_data";
 
 function MedicalRecords() {
     const [records, setRecords] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        setTimeout(() => {
-            setRecords(dummyMedicalRecords);
-        }, 300);
+        const loadMedicalRecords = async () => {
+            try {
+                const medicalRecords = await getMedicalRecords();
+                setRecords(medicalRecords);
+            } catch (error) {
+                console.error('진료 기록을 불러오는데 실패했습니다:', error);
+                setRecords([]);
+            }
+        };
+        
+        // 로딩 시뮬레이션을 위한 setTimeout
+        setTimeout(loadMedicalRecords, 300);
     }, []);
+
+    // useEffect(() => {
+//     // 실제 API 엔드포인트로 교체하세요
+//     fetch("/api/medical-records")
+//         .then((res) => res.json())
+//         .then((data) => setRecords(data))
+//         .catch((err) => console.error(err));
+// }, []);
 
     return (
         <div className="medical-records-root">

@@ -84,24 +84,32 @@
   border-radius: 12px;
   font-size: 16px; /* iOS 줌 방지 */
   transition: all 0.3s ease;
-  background: #f8f9fa;
+  background: rgba(248, 249, 250, 0.9);
+  color: #333;
   -webkit-appearance: none;
   appearance: none;
   min-height: 48px; /* 터치 타겟 최소 크기 */
   box-sizing: border-box;
 }
 
+.form-group input::placeholder {
+  color: #999;
+  opacity: 0.8;
+}
+
 .form-group input:focus {
   outline: none;
   border-color: #667eea;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
   transform: translateY(-1px);
 }
 
 .form-group input.error {
   border-color: #e74c3c;
-  background: #fdf2f2;
+  background: rgba(253, 242, 242, 0.9);
+  color: #333;
 }
 
 .error-message {
