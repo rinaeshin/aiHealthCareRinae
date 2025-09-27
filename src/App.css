@@ -13,9 +13,12 @@ body {
 
 #root {
   min-height: 100vh;
+<<<<<<< HEAD
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+=======
+>>>>>>> 22f4d83 (view dev)
 }
 
 .App {
